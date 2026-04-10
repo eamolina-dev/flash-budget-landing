@@ -15,35 +15,44 @@ type Package = {
 
 const packages: Package[] = [
   {
-    name: "Esencia",
-    price: "USD 650",
-    details: [
-      "Recepción + ceremonia",
-      "Retratos de familia",
-      "250+ fotos editadas",
-      "Galería privada online",
-    ],
+    name: "Esencial",
+    price: "USD 790",
+    details: ["6 hs de cobertura", "1 fotógrafa", "350+ fotos editadas", "Galería privada online"],
   },
   {
     name: "Historia",
-    price: "USD 980",
-    details: [
-      "Cobertura completa",
-      "Sesión previa de retratos",
-      "Highlights en 72 hs",
-      "450+ fotos editadas",
-    ],
+    price: "USD 1.150",
+    details: ["Preparación + fiesta completa", "2 fotógrafos", "600+ fotos editadas", "Adelanto en 72 hs"],
   },
   {
     name: "Legado",
-    price: "USD 1.350",
-    details: [
-      "Segundo fotógrafo",
-      "Sesión editorial pre 15",
-      "Caja premium + impresiones",
-      "650+ fotos editadas",
-    ],
+    price: "USD 1.480",
+    details: ["Cobertura extendida", "Sesión previa", "Álbum premium", "Entrega express + respaldo"],
   },
+];
+
+const previaGallery = [
+  "/images/makeup_preparation/--3.webp",
+  "/images/group_of_people/--177.webp",
+  "/images/portrait_of_a_person/--92.webp",
+  "/images/makeup_preparation/--349.webp",
+  "/images/group_of_people/--203.webp",
+  "/images/portrait_of_a_person/--76.webp",
+  "/images/makeup_preparation/--43.webp",
+  "/images/group_of_people/--318.webp",
+  "/images/portrait_of_a_person/--73.webp",
+];
+
+const fiestaGallery = [
+  "/images/party_dancing/--442.webp",
+  "/images/party_dancing/--839.webp",
+  "/images/people_hugging/--334.webp",
+  "/images/party_dancing/--654.webp",
+  "/images/people_hugging/--169.webp",
+  "/images/party_dancing/--137.webp",
+  "/images/people_hugging/--458.webp",
+  "/images/party_dancing/--801.webp",
+  "/images/people_hugging/--182.webp",
 ];
 
 export const PhotographyBudget = () => {
@@ -52,86 +61,103 @@ export const PhotographyBudget = () => {
   return (
     <>
       <Hero
-        src="/assets/15_Serena_web/Fiesta%2015%20Serena/--407.webp"
-        title="Tus 15, eternos"
-        subtitle="Imágenes que se sienten como un recuerdo vivo."
-        btnText="VER PRESUPUESTO"
+        src="/images/portrait_of_a_person/--361.webp"
+        title="Tus 15, para siempre"
+        subtitle="Lo único que queda... es la fotografía."
+        btnText="VER PROPUESTA"
         btnHref="#presupuesto"
       />
 
       <SplitSection
         id="servicios"
-        image="/assets/15_Renata_web/Fiesta%2015%20Renata%20/--1.webp"
-        imageAlt="Retrato de quinceañera en exteriores"
-        eyebrow="La experiencia"
-        title="Una noche que pasa rápido, una historia que queda"
-        text={`Cobertura sensible, elegante y real.
+        image="/images/makeup_preparation/--523.webp"
+        imageAlt="Preparación y maquillaje de quinceañera"
+        eyebrow="Acto 1 · La previa"
+        title="Todo empieza mucho antes de la fiesta"
+        text={`Manos, nervios, risas y detalles.
 
-Nos quedamos con lo esencial: emoción, familia y fiesta.`}
-        ctaText="QUIERO MI FECHA"
+La historia arranca en silencio.`}
       />
 
-      <FullImageSection
-        src="/assets/15_Juli_web/Fiesta%2015%20Juli/--267.webp"
-        alt="Entrada de quinceañera a su fiesta"
-      />
+      <FullImageSection src="/images/makeup_preparation/--536.webp" alt="Detalle de maquillaje en preparación" />
 
-      <DynamicImageSection
-        src="/assets/15_Serena_web/Fiesta%2015%20Serena/--689.webp"
-        alt="Baile de quinceañera con luces de fiesta"
+      <SplitSection
+        reverse
+        image="/images/group_of_people/--380.webp"
+        imageAlt="Familia acompañando durante la previa"
+        eyebrow="Familia"
+        title="Las miradas que más importan"
+        text={`La emoción aparece antes del salón.
+
+Se retratan momentos y se reflejan emociones.`}
       />
 
       <GalleryMosaic
-        title="Momentos que merecen quedarse"
-        images={[
-          {
-            src: "/assets/15_Renata_web/Fiesta%2015%20Renata%20/--330.webp",
-            alt: "Retrato editorial de quinceañera",
-          },
-          {
-            src: "/assets/15_Juli_web/Fiesta%2015%20Juli/--156.webp",
-            alt: "Quinceañera sonriente con vestido de gala",
-          },
-          {
-            src: "/assets/15_Serena_web/Fiesta%2015%20Serena/--596.webp",
-            alt: "Celebración de 15 años en pista de baile",
-          },
-          {
-            src: "/assets/15_Renata_web/Fiesta%2015%20Renata%20/--529.webp",
-            alt: "Detalle de vestido de quinceañera",
-          },
-          {
-            src: "/assets/15_Juli_web/Fiesta%2015%20Juli/--141.webp",
-            alt: "Abrazo familiar en la fiesta de 15",
-          },
-          {
-            src: "/assets/15_Serena_web/Fiesta%2015%20Serena/--144.webp",
-            alt: "Retrato íntimo de quinceañera",
-          },
-          {
-            src: "/assets/15_Renata_web/Fiesta%2015%20Renata%20/--381.webp",
-            alt: "Quinceañera entrando al salón",
-          },
-          {
-            src: "/assets/15_Juli_web/Fiesta%2015%20Juli/--11.webp",
-            alt: "Detalle de decoración y ambientación",
-          },
-          {
-            src: "/assets/15_Serena_web/Fiesta%2015%20Serena/--325.webp",
-            alt: "Grupo de amigas celebrando",
-          },
-        ]}
+        title="La previa, cuadro por cuadro"
+        images={previaGallery.map((src, index) => ({
+          src,
+          alt: `Momentos de preparación y exteriores ${index + 1}`,
+        }))}
+      />
+
+      <DynamicImageSection src="/images/portrait_of_a_person/--34.webp" alt="Transición de la previa hacia la fiesta" />
+
+      <SplitSection
+        image="/images/portrait_of_a_person/--106.webp"
+        imageAlt="Entrada de quinceañera al evento"
+        eyebrow="Acto 2 · La fiesta"
+        title="La entrada que todos esperan"
+        text={`Luces, aplausos y una sola protagonista.
+
+Cada segundo importa.`}
+      />
+
+      <FullImageSection src="/images/party_dancing/--905.webp" alt="Entrada de impacto en la fiesta de 15" />
+
+      <GalleryMosaic
+        title="Cada momento, sin perder ninguno"
+        images={fiestaGallery.map((src, index) => ({
+          src,
+          alt: `Fiesta, baile y abrazos ${index + 1}`,
+        }))}
       />
 
       <SplitSection
         reverse
-        image="/assets/15_Juli_web/Fiesta%2015%20Juli/--330.webp"
-        imageAlt="Retrato de quinceañera con luz nocturna"
+        image="/images/party_dancing/--937.webp"
+        imageAlt="Cobertura de pista y baile"
         eyebrow="Cobertura"
-        title="Dirección suave, emoción verdadera"
-        text={`Combinamos retrato editorial y mirada documental.
+        title="Presencia discreta, recuerdos intensos"
+        text={`Nos movemos con la fiesta.
 
-El resultado: una galería elegante, viva y natural.`}
+Retratos, baile y abrazos sin cortar el ritmo.`}
+      />
+
+      <FullImageSection src="/images/people_hugging/--704.webp" alt="Momento emocional fuerte entre familia" />
+
+      <DynamicImageSection src="/images/people_hugging/--270.webp" alt="Transición emocional de cierre" />
+
+      <SplitSection
+        image="/images/people_hugging/--201.webp"
+        imageAlt="Abrazo emocional en la celebración"
+        eyebrow="Acto 3 · Valor"
+        title="No se trata solo de fotos"
+        text={`Se guarda lo que se sintió.
+
+Eso también es parte del servicio.`}
+      />
+
+      <FullImageSection src="/images/portrait_of_a_person/--191.webp" alt="Retrato final de quinceañera" />
+
+      <SplitSection
+        reverse
+        image="/images/group_of_people/--241.webp"
+        imageAlt="Foto grupal de cierre"
+        eyebrow="Qué incluye"
+        title="Una cobertura completa y simple"
+        text={`Dirección suave cuando hace falta.
+
+Mirada documental cuando todo sucede.`}
       />
 
       <section id="presupuesto" className="w-full py-24 md:py-32 px-6 bg-[#111115] my-1">
@@ -139,10 +165,10 @@ El resultado: una galería elegante, viva y natural.`}
           <div className="max-w-2xl mb-14 md:mb-20">
             <p className="text-xs uppercase tracking-[0.36em] text-[#a69c90] mb-4">Inversión</p>
             <h2 className="font-editorial text-5xl md:text-7xl font-medium mb-6 text-[#f2ece3]">
-              Paquetes para tus 15
+              Propuestas para tus 15
             </h2>
             <p className="text-[#c9c0b4] text-lg leading-relaxed">
-              Elegí la cobertura ideal y personalizamos cada detalle para tu fecha.
+              Elegí la opción que mejor se adapte a tu día. Todo se puede personalizar.
             </p>
           </div>
 
@@ -166,26 +192,23 @@ El resultado: una galería elegante, viva y natural.`}
         title="Preguntas frecuentes"
         items={[
           {
-            question: "¿Cuándo conviene reservar?",
-            answer:
-              "Entre 4 y 8 meses antes, especialmente para fechas de alta demanda.",
+            question: "¿Cuándo reservar la fecha?",
+            answer: "Lo ideal es entre 4 y 8 meses antes para asegurar disponibilidad.",
           },
           {
-            question: "¿Cuándo se entrega la galería?",
-            answer:
-              "En 3 a 5 semanas, con un adelanto durante los primeros días.",
+            question: "¿Cuándo entregan la galería?",
+            answer: "Entre 3 y 5 semanas, con un adelanto durante los primeros días.",
           },
           {
-            question: "¿Incluye edición?",
-            answer:
-              "Sí. Todas las imágenes seleccionadas se entregan editadas profesionalmente.",
+            question: "¿Está incluida la edición?",
+            answer: "Sí. Todas las fotos entregadas tienen edición profesional.",
           },
         ]}
       />
 
       <ContactSection
-        title="Reservá tu fecha"
-        subtitle="Escribinos por WhatsApp y armamos una propuesta a medida para tus 15."
+        title="Contanos tu fecha"
+        subtitle="Si sentís que esta historia es para vos, hablemos por WhatsApp."
         links={[{ label: "WHATSAPP", href: "https://wa.me/5491112345678" }]}
       />
     </>
