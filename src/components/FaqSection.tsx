@@ -1,3 +1,5 @@
+import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
+
 type FaqItem = {
   question: string;
   answer: string;
@@ -9,18 +11,20 @@ type Props = {
 };
 
 export const FaqSection = ({ title = "Preguntas Frecuentes", items }: Props) => {
+  const ref = useRevealOnScroll<HTMLDivElement>();
+
   return (
-    <section className="w-full py-24 px-6 bg-neutral-100 my-1">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-light text-center mb-16">
+    <section className="w-full py-24 md:py-32 px-6 bg-[#0d0d11] my-1">
+      <div ref={ref} className="max-w-4xl mx-auto reveal-up">
+        <h2 className="font-editorial text-5xl md:text-7xl font-medium text-center mb-16 text-[#f2ece3]">
           {title}
         </h2>
 
         <div className="space-y-10">
           {items.map((item, i) => (
-            <div key={i}>
-              <h3 className="text-lg font-medium mb-2">{item.question}</h3>
-              <p className="text-gray-600 leading-relaxed">{item.answer}</p>
+            <div key={i} className="border-b border-[#2b2823] pb-8">
+              <h3 className="text-xl md:text-2xl font-medium mb-3 text-[#ece3d7]">{item.question}</h3>
+              <p className="text-[#c8bfb3] leading-relaxed">{item.answer}</p>
             </div>
           ))}
         </div>

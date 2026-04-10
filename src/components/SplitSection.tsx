@@ -1,3 +1,5 @@
+import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
+
 type Props = {
   id?: string;
   image: string;
@@ -21,11 +23,10 @@ export const SplitSection = ({
   ctaHref = "#contacto",
   reverse = false,
 }: Props) => {
+  const textRef = useRevealOnScroll<HTMLDivElement>();
+
   return (
-    <section
-      id={id}
-      className="w-full flex flex-col lg:flex-row lg:min-h-screen my-1 bg-stone-50"
-    >
+    <section id={id} className="w-full flex flex-col lg:flex-row lg:min-h-screen my-1 bg-[#0f0f13]">
       <div
         className={`w-full lg:w-1/2 aspect-[4/5] lg:h-auto relative ${
           reverse ? "order-1 lg:order-2" : "order-1"
@@ -35,22 +36,24 @@ export const SplitSection = ({
       </div>
 
       <div
-        className={`w-full lg:w-1/2 relative flex items-center justify-center px-8 md:px-14 py-16 md:py-24 ${
+        className={`w-full lg:w-1/2 relative flex items-center justify-center px-8 md:px-16 py-20 md:py-28 ${
           reverse ? "order-2 lg:order-1" : "order-2"
         }`}
       >
-        <div className="max-w-xl">
+        <div ref={textRef} className="max-w-xl reveal-up">
           {eyebrow ? (
-            <p className="text-xs tracking-[0.3em] uppercase text-stone-500 mb-6">{eyebrow}</p>
+            <p className="text-xs tracking-[0.34em] uppercase text-[#9f978b] mb-6">{eyebrow}</p>
           ) : null}
-          <h2 className="text-3xl md:text-5xl font-light mb-8 leading-tight">{title}</h2>
+          <h2 className="font-editorial text-5xl md:text-7xl font-medium mb-7 leading-[0.95] text-[#f2ece3]">
+            {title}
+          </h2>
 
-          <p className="text-stone-600 leading-relaxed whitespace-pre-line">{text}</p>
+          <p className="text-[#c9c0b4] text-base md:text-lg leading-relaxed whitespace-pre-line">{text}</p>
 
           {ctaText ? (
             <a
               href={ctaHref}
-              className="mt-10 inline-block border border-black px-8 py-3 text-xs tracking-[0.25em] hover:bg-black hover:text-white transition"
+              className="mt-10 inline-block border border-[#d7d1c7] px-8 py-3 text-xs tracking-[0.25em] text-[#f2ece3] hover:bg-[#efe7db] hover:text-black transition"
             >
               {ctaText}
             </a>

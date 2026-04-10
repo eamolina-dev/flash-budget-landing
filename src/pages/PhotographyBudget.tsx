@@ -5,6 +5,7 @@ import { FullImageSection } from "../components/FullImageSection";
 import { GalleryMosaic } from "../components/GalleryMosaic";
 import { Hero } from "../components/HeroImage";
 import { SplitSection } from "../components/SplitSection";
+import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 
 type Package = {
   name: string;
@@ -17,43 +18,45 @@ const packages: Package[] = [
     name: "Esencia",
     price: "USD 650",
     details: [
-      "Cobertura de recepción + ceremonia",
-      "Retratos de la quinceañera y familia",
-      "Galería digital privada",
-      "Entrega de 250+ fotos editadas",
+      "Recepción + ceremonia",
+      "Retratos de familia",
+      "250+ fotos editadas",
+      "Galería privada online",
     ],
   },
   {
     name: "Historia",
     price: "USD 980",
     details: [
-      "Cobertura completa del evento",
+      "Cobertura completa",
       "Sesión previa de retratos",
-      "Highlights para redes en 72 hs",
-      "Entrega de 450+ fotos editadas",
+      "Highlights en 72 hs",
+      "450+ fotos editadas",
     ],
   },
   {
     name: "Legado",
     price: "USD 1.350",
     details: [
-      "Cobertura completa con segundo fotógrafo",
+      "Segundo fotógrafo",
       "Sesión editorial pre 15",
-      "Caja premium + 40 impresiones fine art",
-      "Entrega de 650+ fotos editadas",
+      "Caja premium + impresiones",
+      "650+ fotos editadas",
     ],
   },
 ];
 
 export const PhotographyBudget = () => {
+  const pricingRef = useRevealOnScroll<HTMLDivElement>();
+
   return (
     <>
       <Hero
         src="/assets/15_Serena_web/Fiesta%2015%20Serena/--407.webp"
         title="Tus 15, eternos"
-        subtitle="Una historia visual para volver a sentir cada abrazo, cada lágrima y cada sonrisa."
+        subtitle="Imágenes que se sienten como un recuerdo vivo."
         btnText="VER PRESUPUESTO"
-        btnHref="#servicios"
+        btnHref="#presupuesto"
       />
 
       <SplitSection
@@ -61,10 +64,10 @@ export const PhotographyBudget = () => {
         image="/assets/15_Renata_web/Fiesta%2015%20Renata%20/--1.webp"
         imageAlt="Retrato de quinceañera en exteriores"
         eyebrow="La experiencia"
-        title="No es solo una fiesta, es un capítulo de familia"
-        text={`Cada cobertura está pensada para contar tu noche con sensibilidad y estética editorial.
+        title="Una noche que pasa rápido, una historia que queda"
+        text={`Cobertura sensible, elegante y real.
 
-Nos enfocamos en los detalles que se sienten: la mirada de mamá, las amigas en la pista, el vestido en movimiento y la energía única de tus 15.`}
+Nos quedamos con lo esencial: emoción, familia y fiesta.`}
         ctaText="QUIERO MI FECHA"
       />
 
@@ -125,29 +128,30 @@ Nos enfocamos en los detalles que se sienten: la mirada de mamá, las amigas en 
         image="/assets/15_Juli_web/Fiesta%2015%20Juli/--330.webp"
         imageAlt="Retrato de quinceañera con luz nocturna"
         eyebrow="Cobertura"
-        title="Presencia discreta, resultados inolvidables"
-        text={`Trabajamos con dirección suave para que te veas natural y elegante, sin posar todo el tiempo.
+        title="Dirección suave, emoción verdadera"
+        text={`Combinamos retrato editorial y mirada documental.
 
-Combinamos retrato, documental y fotografía de fiesta para entregar una galería completa, emotiva y coherente.`}
+El resultado: una galería elegante, viva y natural.`}
       />
 
-      <section id="presupuesto" className="w-full py-20 md:py-28 px-6 bg-stone-50 my-1">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-2xl mb-12 md:mb-16">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500 mb-4">Inversión</p>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Paquetes para tus 15 años</h2>
-            <p className="text-stone-600 leading-relaxed">
-              Elegí el nivel de cobertura que mejor acompaña tu celebración. Todos los paquetes incluyen
-              edición profesional y acompañamiento previo para planificar cada momento.
+      <section id="presupuesto" className="w-full py-24 md:py-32 px-6 bg-[#111115] my-1">
+        <div ref={pricingRef} className="max-w-6xl mx-auto reveal-up">
+          <div className="max-w-2xl mb-14 md:mb-20">
+            <p className="text-xs uppercase tracking-[0.36em] text-[#a69c90] mb-4">Inversión</p>
+            <h2 className="font-editorial text-5xl md:text-7xl font-medium mb-6 text-[#f2ece3]">
+              Paquetes para tus 15
+            </h2>
+            <p className="text-[#c9c0b4] text-lg leading-relaxed">
+              Elegí la cobertura ideal y personalizamos cada detalle para tu fecha.
             </p>
           </div>
 
           <div className="grid gap-10 md:grid-cols-3">
             {packages.map((pack) => (
-              <article key={pack.name} className="border-t border-stone-300 pt-6">
-                <h3 className="text-2xl font-light mb-3">{pack.name}</h3>
-                <p className="text-3xl font-light mb-6">{pack.price}</p>
-                <ul className="space-y-3 text-stone-600">
+              <article key={pack.name} className="border-t border-[#38332d] pt-7">
+                <h3 className="font-editorial text-4xl md:text-5xl text-[#f2ece3] mb-3">{pack.name}</h3>
+                <p className="text-3xl font-light text-[#e5dbcd] mb-7">{pack.price}</p>
+                <ul className="space-y-3 text-[#c9c0b4]">
                   {pack.details.map((detail) => (
                     <li key={detail}>— {detail}</li>
                   ))}
@@ -162,26 +166,26 @@ Combinamos retrato, documental y fotografía de fiesta para entregar una galerí
         title="Preguntas frecuentes"
         items={[
           {
-            question: "¿Con cuánta anticipación recomiendan reservar?",
+            question: "¿Cuándo conviene reservar?",
             answer:
-              "Lo ideal es reservar entre 4 y 8 meses antes, especialmente para fechas de temporada alta."
+              "Entre 4 y 8 meses antes, especialmente para fechas de alta demanda.",
           },
           {
-            question: "¿Cuándo se entrega el material final?",
+            question: "¿Cuándo se entrega la galería?",
             answer:
-              "La galería final suele entregarse en 3 a 5 semanas, con un adelanto de fotos durante los primeros días."
+              "En 3 a 5 semanas, con un adelanto durante los primeros días.",
           },
           {
-            question: "¿Las fotos se entregan editadas?",
+            question: "¿Incluye edición?",
             answer:
-              "Sí. Todas las imágenes seleccionadas se entregan con edición profesional y una estética consistente."
+              "Sí. Todas las imágenes seleccionadas se entregan editadas profesionalmente.",
           },
         ]}
       />
 
       <ContactSection
-        title="Hagamos que tus 15 se vean tan increíbles como se sienten"
-        subtitle="Consultá disponibilidad por WhatsApp y te enviamos propuestas personalizadas para tu fecha."
+        title="Reservá tu fecha"
+        subtitle="Escribinos por WhatsApp y armamos una propuesta a medida para tus 15."
         links={[{ label: "WHATSAPP", href: "https://wa.me/5491112345678" }]}
       />
     </>
