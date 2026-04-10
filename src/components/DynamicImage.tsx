@@ -1,6 +1,11 @@
 import { useEffect, useRef } from "react";
 
-export const DynamicImageSection = () => {
+type Props = {
+  src: string;
+  alt: string;
+};
+
+export const DynamicImageSection = ({ src, alt }: Props) => {
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
@@ -16,7 +21,7 @@ export const DynamicImageSection = () => {
       let progress = 1 - rect.bottom / (windowHeight + rect.height);
       progress = Math.min(Math.max(progress, 0), 1);
 
-      const scale = 1.5 - progress * 0.5;
+      const scale = 1.22 - progress * 0.22;
       imgRef.current.style.transform = `scale(${scale})`;
     };
 
@@ -27,12 +32,12 @@ export const DynamicImageSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen overflow-hidden my-1">
+    <section className="relative w-full h-[65vh] md:h-[80vh] lg:h-screen overflow-hidden my-1">
       <img
         ref={imgRef}
-        src="/assets/photography-page/couple-8176869_1280.jpg"
-        alt="Fotografía artística"
-        className="absolute inset-0 w-full h-full object-cover"
+        src={src}
+        alt={alt}
+        className="absolute inset-0 w-full h-full object-cover will-change-transform"
       />
     </section>
   );

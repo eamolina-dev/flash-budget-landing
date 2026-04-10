@@ -3,38 +3,40 @@ type Props = {
   title: string;
   subtitle: string;
   btnText: string;
+  btnHref?: string;
 };
 
-export const Hero = ({ src, title, subtitle, btnText }: Props) => {
+export const Hero = ({
+  src,
+  title,
+  subtitle,
+  btnText,
+  btnHref = "#servicios",
+}: Props) => {
   return (
-    <section className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen overflow-hidden my-1">
-      {/* Imagen de fondo */}
+    <section className="relative w-full h-[72vh] md:h-[88vh] lg:h-screen overflow-hidden my-1">
       <img
         src={src}
-        alt="Fotografía artística"
+        alt="Quinceañera en su celebración"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Overlay oscuro */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/40" />
 
-      {/* Contenido */}
-      <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-6">
-        <div>
-          <h1 className="text-6xl md:text-8xl font-medium tracking-wide drop-shadow-lg">
+      <div className="relative z-10 flex items-end h-full text-white px-6 md:px-12 pb-16 md:pb-24">
+        <div className="max-w-2xl">
+          <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-white/80 mb-4">
+            Fotografía de 15 años
+          </p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-[0.95] drop-shadow-lg">
             {title}
           </h1>
 
-          <p className="mt-6 text-lg md:text-xl font-medium drop-shadow">
-            {subtitle}
-          </p>
-
-          <br />
+          <p className="mt-6 text-base md:text-xl text-white/90 max-w-xl">{subtitle}</p>
 
           <a
-            // href="#servicios"
-            href="https://tyr.com.ar/arredondo2025insc/inscriptionsshort?layout=formonline&amp%3Bidx=491&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnqLbQXcaCkSTsjw3I3TugQBDR8nabMrNdCTzXr9dHyCUxl1WdwqwkzVGdFq4_aem_F6jqE6vBxp1Kamj99asvBw"
-            className="mt-8 inline-block border border-white px-8 py-3 text-lg tracking-widest hover:bg-white hover:text-black transition"
+            href={btnHref}
+            className="mt-10 inline-block border border-white px-8 py-3 text-xs md:text-sm tracking-[0.25em] hover:bg-white hover:text-black transition"
           >
             {btnText}
           </a>
