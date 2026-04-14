@@ -26,13 +26,20 @@ export const SplitSection = ({
   const textRef = useRevealOnScroll<HTMLDivElement>();
 
   return (
-    <section id={id} className="w-full flex flex-col lg:flex-row lg:min-h-screen my-1 bg-[#0f0f13]">
+    <section
+      id={id}
+      className="relative z-10 bg-[#0f0f13] -mt-[100vh] w-full flex flex-col lg:flex-row lg:min-h-screen my-1 bg-[#0f0f13]"
+    >
       <div
         className={`w-full lg:w-1/2 aspect-[4/5] lg:h-auto relative ${
           reverse ? "order-1 lg:order-2" : "order-1"
         }`}
       >
-        <img src={image} alt={imageAlt} className="absolute inset-0 w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={imageAlt}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
       </div>
 
       <div
@@ -42,13 +49,17 @@ export const SplitSection = ({
       >
         <div ref={textRef} className="max-w-xl reveal-up">
           {eyebrow ? (
-            <p className="text-xs tracking-[0.34em] uppercase text-[#9f978b] mb-6">{eyebrow}</p>
+            <p className="text-xs tracking-[0.34em] uppercase text-[#9f978b] mb-6">
+              {eyebrow}
+            </p>
           ) : null}
           <h2 className="font-editorial text-5xl md:text-7xl font-medium mb-7 leading-[0.95] text-[#f2ece3]">
             {title}
           </h2>
 
-          <p className="text-[#c9c0b4] text-base md:text-lg leading-relaxed whitespace-pre-line">{text}</p>
+          <p className="text-[#c9c0b4] text-base md:text-lg leading-relaxed whitespace-pre-line">
+            {text}
+          </p>
 
           {ctaText ? (
             <a
