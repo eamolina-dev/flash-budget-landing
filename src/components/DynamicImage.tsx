@@ -9,6 +9,9 @@ export const DynamicImageSection = ({ src, alt }: Props) => {
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
+    let current = 0;
+    let target = 0;
+
     const handleScroll = () => {
       if (!imgRef.current) return;
 
@@ -21,26 +24,52 @@ export const DynamicImageSection = ({ src, alt }: Props) => {
       let progress = 1 - rect.bottom / (windowHeight + rect.height);
       progress = Math.min(Math.max(progress, 0), 1);
 
-      const scale = 1.18 - progress * 0.18;
-      const shift = (progress - 0.5) * 26;
-      imgRef.current.style.transform = `scale(${scale}) translateY(${shift}px)`;
+      target = progress;
+    };
+
+    const animate = () => {
+      // 🔥 suavizado (clave)
+      current += (target - current) * 0.06;
+
+      if (imgRef.current) {
+        // 🔥 ZOOM MUY NOTORIO
+        const scale = 1.6 - current * 0.6;
+
+        // 🔥 PARALLAX FUERTE
+        const translateY = (current - 0.5) * 120;
+
+        // 🔥 easing no lineal (más cinematográfico)
+        const eased = current * current * (3 - 2 * current); // smoothstep
+
+        imgRef.current.style.transform = `
+          scale(${scale})
+          translateY(${translateY * eased}px)
+        `;
+      }
+
+      requestAnimationFrame(animate);
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
+    animate();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <section className="relative w-full h-[70vh] md:h-[85vh] lg:h-screen overflow-hidden my-1">
+    <section className="relative w-full h-[90vh] md:h-screen overflow-hidden my-1">
       <img
         ref={imgRef}
         src={src}
         alt={alt}
         className="absolute inset-0 w-full h-full object-cover will-change-transform"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
+
+      {/* overlay suave para dar profundidad */}
+      <div className="absolute inset-0 bg-black/30 pointer-events-none" />
     </section>
   );
 };
