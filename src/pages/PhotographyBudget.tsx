@@ -76,7 +76,7 @@ export const PhotographyBudget = () => {
   return (
     <>
       <Hero
-        src="/images/portrait_of_a_person/--361.jpg"
+        src="/images/portrait_of_a_person/--75.jpg"
         title="Tus 15, para siempre"
         subtitle="Lo único que queda... es la fotografía."
         btnText="VER PROPUESTA"
@@ -95,13 +95,13 @@ La historia arranca en silencio.`}
       />
 
       <FullImageSection
-        src="/images/makeup_preparation/--536.jpg"
+        src="/images/makeup_preparation/--19.jpg"
         alt="Detalle de maquillaje en preparación"
       />
 
       <SplitSection
         reverse
-        image="/images/group_of_people/--380.jpg"
+        image="/images/portrait_of_a_person/--178.jpg"
         imageAlt="Familia acompañando durante la previa"
         eyebrow="Familia"
         title="Las miradas que más importan"
@@ -119,7 +119,7 @@ Se retratan momentos y se reflejan emociones.`}
       />
 
       <DynamicImageSection
-        src="/images/portrait_of_a_person/--34.jpg"
+        src="/images/party_dancing/--79.jpg"
         alt="Transición de la previa hacia la fiesta"
       />
 
@@ -134,7 +134,7 @@ Cada segundo importa.`}
       />
 
       <FullImageSection
-        src="/images/party_dancing/--905.jpg"
+        src="/images/portrait_of_a_person/--191.jpg"
         alt="Entrada de impacto en la fiesta de 15"
       />
 
@@ -148,7 +148,7 @@ Cada segundo importa.`}
 
       <SplitSection
         reverse
-        image="/images/party_dancing/--937.jpg"
+        image="/images/party_dancing/--363.jpg"
         imageAlt="Cobertura de pista y baile"
         eyebrow="Cobertura"
         title="Presencia discreta, recuerdos intensos"
@@ -158,17 +158,17 @@ Retratos, baile y abrazos sin cortar el ritmo.`}
       />
 
       <FullImageSection
-        src="/images/people_hugging/--704.jpg"
+        src="/images/party_dancing/--905.jpg"
         alt="Momento emocional fuerte entre familia"
       />
 
       <DynamicImageSection
-        src="/images/people_hugging/--270.jpg"
+        src="/images/party_dancing/--463.jpg"
         alt="Transición emocional de cierre"
       />
 
       <SplitSection
-        image="/images/people_hugging/--201.jpg"
+        image="/images/party_dancing/--335.jpg"
         imageAlt="Abrazo emocional en la celebración"
         eyebrow="Acto 3 · Valor"
         title="No se trata solo de fotos"
@@ -178,7 +178,7 @@ Eso también es parte del servicio.`}
       />
 
       <FullImageSection
-        src="/images/portrait_of_a_person/--191.jpg"
+        src="/images/people_hugging/--182.jpg"
         alt="Retrato final de quinceañera"
       />
 
