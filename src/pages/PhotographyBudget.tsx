@@ -4,10 +4,8 @@ import { FaqSection } from "../components/FaqSection";
 import { FullImageSection } from "../components/FullImageSection";
 import { GalleryMosaic } from "../components/GalleryMosaic";
 import { Hero } from "../components/HeroImage";
-import { ParallaxZoomSection } from "../components/ParallaxZoomSection";
 import { RevealImageSection } from "../components/RevealImageSection";
 import { SplitSection } from "../components/SplitSection";
-import { StickyImageSection } from "../components/StickyImageSection";
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 
 type Package = {

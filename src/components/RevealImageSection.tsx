@@ -24,8 +24,7 @@ export const RevealImageSection = ({ image, alt = "" }: Props) => {
       const scrollDistance = Math.max(rect.height - viewportHeight, 1);
       const traveled = clamp(-rect.top, 0, scrollDistance);
 
-      // Reveal image during the first part of the section scroll,
-      // then keep it fully visible while it remains sticky.
+      // Reveal image in the first 65% of travel, then keep it fully visible.
       const revealDistance = scrollDistance * 0.65;
       const nextProgress = clamp(traveled / revealDistance, 0, 1);
 
@@ -49,25 +48,27 @@ export const RevealImageSection = ({ image, alt = "" }: Props) => {
     return () => {
       window.removeEventListener("scroll", onScrollOrResize);
       window.removeEventListener("resize", onScrollOrResize);
-      if (rafId) {
-        window.cancelAnimationFrame(rafId);
-      }
+      if (rafId) window.cancelAnimationFrame(rafId);
     };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[185vh] sm:h-[190vh] lg:h-[210vh]"
+      className="relative w-full h-[190vh] md:h-[200vh] lg:h-[220vh]"
     >
       <div className="sticky top-0 h-screen overflow-hidden">
-        <img
-          src={image}
-          alt={alt}
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ clipPath: `inset(${100 - progress * 100}% 0 0 0)` }}
-        />
-        <div className="absolute inset-0 bg-black/20" />
+        <div
+          className="absolute inset-x-0 bottom-0 overflow-hidden"
+          style={{ height: `${progress * 100}%` }}
+        >
+          <img
+            src={image}
+            alt={alt}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
       </div>
     </section>
   );
