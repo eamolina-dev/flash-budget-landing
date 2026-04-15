@@ -51,14 +51,16 @@ const packages: Package[] = [
 
 const previaGallery = [
   "/images/makeup_preparation/--3.jpg",
-  "/images/group_of_people/--177.jpg",
-  "/images/portrait_of_a_person/--92.jpg",
-  "/images/makeup_preparation/--349.jpg",
-  "/images/group_of_people/--203.jpg",
-  "/images/portrait_of_a_person/--76.jpg",
+  "/images/group_of_people/--106.jpg",
+  "/images/portrait_of_a_person/--75.jpg",
+  "/images/makeup_preparation/--19.jpg",
+  "/images/group_of_people/--112.jpg",
+  "/images/portrait_of_a_person/--81.jpg",
   "/images/makeup_preparation/--43.jpg",
-  "/images/group_of_people/--318.jpg",
-  "/images/portrait_of_a_person/--73.jpg",
+  "/images/group_of_people/--41.jpg",
+  "/images/portrait_of_a_person/--13.jpg",
+  "/images/portrait_of_a_person/--89.jpg",
+  "/images/portrait_of_a_person/--106.jpg",
 ];
 
 const fiestaGallery = [
@@ -141,15 +143,19 @@ Se retratan momentos y se reflejan emociones.`}
         alt="Transición de la previa hacia la fiesta"
       />
 
-      <SplitSection
-        image="/images/portrait_of_a_person/--106.jpg"
-        imageAlt="Entrada de quinceañera al evento"
-        eyebrow="Acto 2 · La fiesta"
-        title="La entrada que todos esperan"
-        text={`Luces, aplausos y una sola protagonista.
+      <section className="bg-[#0f0f13]">
+        <div className="relative z-10 -mt-[70vh]">
+          <SplitSection
+            image="/images/portrait_of_a_person/--106.jpg"
+            imageAlt="Entrada de quinceañera al evento"
+            eyebrow="Acto 2 · La fiesta"
+            title="La entrada que todos esperan"
+            text={`Luces, aplausos y una sola protagonista.
 
 Cada segundo importa.`}
-      />
+          />
+        </div>
+      </section>
 
       <FullImageSection
         src="/images/portrait_of_a_person/--191.jpg"

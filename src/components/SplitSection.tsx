@@ -28,7 +28,7 @@ export const SplitSection = ({
   return (
     <section
       id={id}
-      className="relative z-10 bg-[#0f0f13] -mt-[100vh] w-full flex flex-col lg:flex-row lg:min-h-screen my-1 bg-[#0f0f13]"
+      className="relative z-10 bg-[#0f0f13] -mt-[60vh] w-full flex flex-col lg:flex-row lg:min-h-screen my-1 bg-[#0f0f13]"
     >
       <div
         className={`w-full lg:w-1/2 aspect-[4/5] lg:h-auto relative ${
