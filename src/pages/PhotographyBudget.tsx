@@ -143,19 +143,19 @@ Se retratan momentos y se reflejan emociones.`}
         alt="Transición de la previa hacia la fiesta"
       />
 
-      <section className="bg-[#0f0f13]">
-        <div className="relative z-10 -mt-[70vh]">
-          <SplitSection
-            image="/images/portrait_of_a_person/--106.jpg"
-            imageAlt="Entrada de quinceañera al evento"
-            eyebrow="Acto 2 · La fiesta"
-            title="La entrada que todos esperan"
-            text={`Luces, aplausos y una sola protagonista.
+      {/* <section className="bg-[#0f0f13]"> */}
+      {/* <div className="relative z-10 -mt-[70vh]"> */}
+      <SplitSection
+        image="/images/portrait_of_a_person/--106.jpg"
+        imageAlt="Entrada de quinceañera al evento"
+        eyebrow="Acto 2 · La fiesta"
+        title="La entrada que todos esperan"
+        text={`Luces, aplausos y una sola protagonista.
 
 Cada segundo importa.`}
-          />
-        </div>
-      </section>
+      />
+      {/* </div> */}
+      {/* </section> */}
 
       <FullImageSection
         src="/images/portrait_of_a_person/--191.jpg"
