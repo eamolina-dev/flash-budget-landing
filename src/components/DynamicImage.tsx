@@ -28,23 +28,22 @@ export const DynamicImageSection = ({ src, alt }: Props) => {
     };
 
     const animate = () => {
-      // 🔥 suavizado (clave)
       current += (target - current) * 0.06;
 
       if (imgRef.current) {
-        // 🔥 ZOOM MUY NOTORIO
-        const scale = 1.6 - current * 0.6;
+        // 🔹 zoom MUY sutil (casi imperceptible)
+        const scale = 1.08 - current * 0.08;
 
-        // 🔥 PARALLAX FUERTE
-        const translateY = (current - 0.5) * 120;
+        // 🔹 parallax leve
+        const translateY = (current - 0.5) * 40;
 
-        // 🔥 easing no lineal (más cinematográfico)
-        const eased = current * current * (3 - 2 * current); // smoothstep
+        // 🔹 easing suave
+        const eased = current * current * (3 - 2 * current);
 
         imgRef.current.style.transform = `
-          scale(${scale})
-          translateY(${translateY * eased}px)
-        `;
+      scale(${scale})
+      translateY(${translateY * eased}px)
+    `;
       }
 
       requestAnimationFrame(animate);
