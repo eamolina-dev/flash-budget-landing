@@ -1,5 +1,3 @@
-import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
-
 type ContactLink = {
   label: string;
   href: string;
@@ -12,11 +10,9 @@ type Props = {
 };
 
 export const ContactSection = ({ title, subtitle, links }: Props) => {
-  const ref = useRevealOnScroll<HTMLDivElement>();
-
   return (
     <section id="contacto" className="w-full py-24 md:py-32 px-6 bg-[#070709] text-[#f2ece3] my-1">
-      <div ref={ref} className="max-w-3xl mx-auto text-center reveal-up">
+      <div className="max-w-3xl mx-auto text-center">
         <h2 className="font-editorial text-5xl md:text-7xl font-medium mb-6">{title}</h2>
 
         <p className="text-[#c9c0b4] text-lg mb-12">{subtitle}</p>

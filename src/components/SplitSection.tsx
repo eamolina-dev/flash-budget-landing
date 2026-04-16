@@ -1,5 +1,3 @@
-import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
-
 type Props = {
   id?: string;
   image: string;
@@ -23,8 +21,6 @@ export const SplitSection = ({
   ctaHref = "#contacto",
   reverse = false,
 }: Props) => {
-  const textRef = useRevealOnScroll<HTMLDivElement>();
-
   return (
     <section
       id={id}
@@ -47,7 +43,7 @@ export const SplitSection = ({
           reverse ? "order-2 lg:order-1" : "order-2"
         }`}
       >
-        <div ref={textRef} className="max-w-xl reveal-up">
+        <div className="max-w-xl">
           {eyebrow ? (
             <p className="text-xs tracking-[0.34em] uppercase text-[#9f978b] mb-6">
               {eyebrow}

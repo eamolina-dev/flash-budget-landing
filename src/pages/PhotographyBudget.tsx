@@ -5,12 +5,8 @@ import { FaqSection } from "../components/FaqSection";
 import { FullImageSection } from "../components/FullImageSection";
 import { GalleryMosaic } from "../components/GalleryMosaic";
 import { Hero } from "../components/HeroImage";
-import { ParallaxZoomSection } from "../components/ParallaxZoomSection";
-import { RevealImageSection } from "../components/RevealImageSection";
 import { RevealWindow } from "../components/RevealWindow";
 import { SplitSection } from "../components/SplitSection";
-import { StickyImageSection } from "../components/StickyImageSection";
-import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 
 type Package = {
   name: string;
@@ -78,8 +74,6 @@ const fiestaGallery = [
 ];
 
 export const PhotographyBudget = () => {
-  const pricingRef = useRevealOnScroll<HTMLDivElement>();
-
   const [bgImage, setBgImage] = useState("/images/party_dancing/--79.jpg");
 
   return (
@@ -213,7 +207,7 @@ Mirada documental cuando todo sucede.`}
           id="presupuesto"
           className="w-full py-24 md:py-32 px-6 bg-[#111115] my-1"
         >
-          <div ref={pricingRef} className="max-w-6xl mx-auto reveal-up">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-2xl mb-14 md:mb-20">
               <p className="text-xs uppercase tracking-[0.36em] text-[#a69c90] mb-4">
                 Inversión

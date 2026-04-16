@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { useRevealOnScroll } from "../hooks/useRevealOnScroll";
 
 type Props = {
   src: string;
@@ -17,7 +16,6 @@ export const Hero = ({
   btnHref = "#servicios",
 }: Props) => {
   const imageRef = useRef<HTMLImageElement | null>(null);
-  const contentRef = useRevealOnScroll<HTMLDivElement>();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +42,7 @@ export const Hero = ({
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20" />
 
       <div className="relative z-10 flex items-end h-full px-6 md:px-14 pb-16 md:pb-24">
-        <div ref={contentRef} className="max-w-3xl reveal-up">
+        <div className="max-w-3xl">
           <p className="text-xs md:text-sm tracking-[0.4em] uppercase text-[#d5cfc5] mb-5">
             Fotografía de 15 años
           </p>
