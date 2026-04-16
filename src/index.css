@@ -46,3 +46,26 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ---------------- */
+.reveal-wrapper {
+  position: relative;
+  /* El wrapper abraza todo. No necesita height fijo, lo define su contenido */
+}
+
+.sticky-image {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Lo tiramos al fondo del wrapper */
+}
+
+.transparent-hole {
+  height: 100vh;
+  background-color: transparent;
+  /* Como este div viene DESPUÉS en el HTML pero no es sticky, 
+     va a scrollear normalmente por encima de la imagen pegada */
+}

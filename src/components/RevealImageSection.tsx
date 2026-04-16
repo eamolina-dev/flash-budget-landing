@@ -30,7 +30,7 @@ export const RevealImageSection = ({ image, alt = "" }: Props) => {
       const nextProgress = clamp(traveled / revealDistance, 0, 1);
 
       setProgress((current) =>
-        Math.abs(current - nextProgress) > 0.001 ? nextProgress : current,
+        Math.abs(current - nextProgress) > 0.001 ? nextProgress : current
       );
     };
 
@@ -65,9 +65,9 @@ export const RevealImageSection = ({ image, alt = "" }: Props) => {
           src={image}
           alt={alt}
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ clipPath: `inset(${100 - progress * 100}% 0 0 0)` }}
+          // style={{ clipPath: `inset(${100 - progress * 100}% 0 0 0)` }}
         />
-        <div className="absolute inset-0 bg-black/20" />
+        {/* <div className="absolute inset-0 bg-black/20" /> */}
       </div>
     </section>
   );
