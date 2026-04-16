@@ -50,7 +50,7 @@ const previaGallery = [
   "/images/portrait_of_a_person/--106.jpg",
   "/images/group_of_people/--106.jpg",
   "/images/portrait_of_a_person/--75.jpg",
-  "/images/makeup_preparation/--19.jpg",
+  "/images/makeup_preparation/--22.jpg",
   "/images/group_of_people/--112.jpg",
   "/images/makeup_preparation/--43.jpg",
   "/images/portrait_of_a_person/--81.jpg",
@@ -98,7 +98,7 @@ export const PhotographyBudget = () => {
 
         <SplitSection
           id="servicios"
-          image="/images/makeup_preparation/--523.jpg"
+          image="/images/party_dancing/--12.jpg"
           imageAlt="Preparación y maquillaje de quinceañera"
           eyebrow="Acto 1 · La previa"
           title="Todo empieza mucho antes de la fiesta"
@@ -107,7 +107,11 @@ export const PhotographyBudget = () => {
 La historia arranca en silencio.`}
         />
 
-        <FullImageSection
+        {/* <FullImageSection
+          src="/images/makeup_preparation/--19.jpg"
+          alt="Detalle de maquillaje en preparación"
+        /> */}
+        <DynamicImageSection
           src="/images/makeup_preparation/--19.jpg"
           alt="Detalle de maquillaje en preparación"
         />
@@ -169,10 +173,10 @@ Cada segundo importa.`}
 Retratos, baile y abrazos sin cortar el ritmo.`}
         />
 
-        <FullImageSection
+        {/* <FullImageSection
           src="/images/party_dancing/--905.jpg"
           alt="Momento emocional fuerte entre familia"
-        />
+        /> */}
 
         <DynamicImageSection
           src="/images/party_dancing/--463.jpg"
