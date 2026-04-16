@@ -47,29 +47,35 @@ const packages: Package[] = [
 ];
 
 const previaGallery = [
-  "/images/makeup_preparation/--3.jpg",
+  "/images/portrait_of_a_person/--106.jpg",
   "/images/group_of_people/--106.jpg",
   "/images/portrait_of_a_person/--75.jpg",
   "/images/makeup_preparation/--19.jpg",
   "/images/group_of_people/--112.jpg",
-  "/images/portrait_of_a_person/--81.jpg",
   "/images/makeup_preparation/--43.jpg",
+  "/images/portrait_of_a_person/--81.jpg",
   "/images/group_of_people/--41.jpg",
-  "/images/portrait_of_a_person/--13.jpg",
   "/images/portrait_of_a_person/--89.jpg",
-  "/images/portrait_of_a_person/--106.jpg",
+  "/images/portrait_of_a_person/--13.jpg",
+  "/images/party_dancing/--138.jpg",
+  "/images/makeup_preparation/--39.jpg",
 ];
 
 const fiestaGallery = [
-  "/images/party_dancing/--442.jpg",
-  "/images/party_dancing/--839.jpg",
-  "/images/people_hugging/--334.jpg",
+  "/images/party_dancing/--231.jpg",
   "/images/party_dancing/--654.jpg",
-  "/images/people_hugging/--169.jpg",
-  "/images/party_dancing/--137.jpg",
-  "/images/people_hugging/--458.jpg",
-  "/images/party_dancing/--801.jpg",
-  "/images/people_hugging/--182.jpg",
+  "/images/party_dancing/--167.jpg",
+  "/images/makeup_preparation/--523.jpg",
+  "/images/party_dancing/--929.jpg",
+  "/images/party_dancing/--954.jpg",
+  //
+  "/images/party_dancing/--605.jpg",
+  "/images/party_dancing/--537.jpg",
+  "/images/party_dancing/--464.jpg",
+
+  "/images/party_dancing/--218.jpg",
+  "/images/party_dancing/--377.jpg",
+  "/images/group_of_people/--913.jpg",
 ];
 
 export const PhotographyBudget = () => {
@@ -77,7 +83,9 @@ export const PhotographyBudget = () => {
     <div className="relative">
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center -z-50 transition-all duration-700 ease-in-out"
-        style={{ backgroundImage: "url(/images/party_dancing/--79.jpg)" }}
+        style={{
+          backgroundImage: "url(/images/portrait_of_a_person/--76.jpg)",
+        }}
       />
       <div className="bg-[#111115] relative z-10 outline outline-1 outline-[#111115] -mt-[1px] pt-[1px]">
         <Hero
