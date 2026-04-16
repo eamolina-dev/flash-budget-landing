@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ContactSection } from "../components/ContactSection";
 import { DynamicImageSection } from "../components/DynamicImage";
 import { FaqSection } from "../components/FaqSection";
@@ -74,13 +73,11 @@ const fiestaGallery = [
 ];
 
 export const PhotographyBudget = () => {
-  const [bgImage, setBgImage] = useState("/images/party_dancing/--79.jpg");
-
   return (
     <div className="relative">
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center -z-50 transition-all duration-700 ease-in-out"
-        style={{ backgroundImage: `url(${bgImage})` }}
+        style={{ backgroundImage: "url(/images/party_dancing/--79.jpg)" }}
       />
       <div className="bg-[#111115] relative z-10 outline outline-1 outline-[#111115] -mt-[1px] pt-[1px]">
         <Hero
@@ -127,10 +124,7 @@ Se retratan momentos y se reflejan emociones.`}
         />
       </div>
 
-      <RevealWindow
-        image="/images/party_dancing/--363.jpg" /* O la foto que quieras */
-        onVisible={setBgImage}
-      />
+      <RevealWindow />
 
       <div className="bg-[#111115] relative z-10 outline outline-1 outline-[#111115] -mt-[1px] pt-[1px]">
         <SplitSection
