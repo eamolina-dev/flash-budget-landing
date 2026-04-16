@@ -6,60 +6,78 @@ type Props = {
 };
 
 export const DynamicImageSection = ({ src, alt }: Props) => {
+  const sectionRef = useRef<HTMLElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
     let current = 0;
     let target = 0;
+    let measureRaf = 0;
+    let animateRaf = 0;
 
-    const handleScroll = () => {
-      if (!imgRef.current) return;
+    const measureProgress = () => {
+      measureRaf = 0;
 
-      const section = imgRef.current.closest("section");
-      if (!section) return;
+      if (!sectionRef.current) return;
 
-      const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const rawProgress = 1 - rect.bottom / (viewportHeight + rect.height);
+      const nextTarget = Math.min(Math.max(rawProgress, 0), 1);
 
-      let progress = 1 - rect.bottom / (windowHeight + rect.height);
-      progress = Math.min(Math.max(progress, 0), 1);
+      // Small dead-zone to avoid tiny back-and-forth changes during fast scroll.
+      if (Math.abs(nextTarget - target) > 0.002) {
+        target = nextTarget;
+      }
+    };
 
-      target = progress;
+    const queueMeasure = () => {
+      if (measureRaf) return;
+      measureRaf = window.requestAnimationFrame(measureProgress);
     };
 
     const animate = () => {
-      current += (target - current) * 0.06;
+      const delta = target - current;
+      current += delta * 0.1;
 
-      if (imgRef.current) {
-        // 🔹 zoom MUY sutil (casi imperceptible)
-        const scale = 1.08 - current * 0.08;
-
-        // 🔹 parallax leve
-        const translateY = (current - 0.5) * 40;
-
-        // 🔹 easing suave
-        const eased = current * current * (3 - 2 * current);
-
-        imgRef.current.style.transform = `
-      scale(${scale})
-      translateY(${translateY * eased}px)
-    `;
+      // Snap when close enough to eliminate sub-pixel jitter.
+      if (Math.abs(delta) < 0.0005) {
+        current = target;
       }
 
-      requestAnimationFrame(animate);
+      if (imgRef.current) {
+        const scale = 1.08 - current * 0.08;
+        const translateY = (current - 0.5) * 24;
+        imgRef.current.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+      }
+
+      animateRaf = window.requestAnimationFrame(animate);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    window.addEventListener("scroll", queueMeasure, { passive: true });
+    window.addEventListener("resize", queueMeasure);
+
+    queueMeasure();
     animate();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", queueMeasure);
+      window.removeEventListener("resize", queueMeasure);
+
+      if (measureRaf) {
+        window.cancelAnimationFrame(measureRaf);
+      }
+      if (animateRaf) {
+        window.cancelAnimationFrame(animateRaf);
+      }
     };
   }, []);
 
   return (
-    <section className="relative w-full h-[90vh] md:h-screen overflow-hidden my-1">
+    <section
+      ref={sectionRef}
+      className="relative w-full h-[90vh] md:h-screen overflow-hidden my-1"
+    >
       <img
         ref={imgRef}
         src={src}
@@ -67,7 +85,6 @@ export const DynamicImageSection = ({ src, alt }: Props) => {
         className="absolute inset-0 w-full h-full object-cover will-change-transform"
       />
 
-      {/* overlay suave para dar profundidad */}
       <div className="absolute inset-0 bg-black/30 pointer-events-none" />
     </section>
   );

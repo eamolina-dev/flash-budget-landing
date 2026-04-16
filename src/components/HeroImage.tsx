@@ -18,16 +18,32 @@ export const Hero = ({
   const imageRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let rafId = 0;
+
+    const updateTransform = () => {
+      rafId = 0;
       if (!imageRef.current) return;
+
       const offset = Math.min(window.scrollY * 0.2, 120);
-      imageRef.current.style.transform = `scale(1.08) translateY(${offset}px)`;
+      imageRef.current.style.transform = `translate3d(0, ${offset}px, 0) scale(1.08)`;
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(updateTransform);
+    };
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
   }, []);
 
   return (
