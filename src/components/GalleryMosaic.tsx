@@ -10,7 +10,7 @@ type Props = {
 
 export const GalleryMosaic = ({ title, images }: Props) => {
   return (
-    <section className="w-full py-24 md:py-32 px-4 md:px-8 bg-[#09090c] my-1">
+    <section className="w-full py-24 md:py-32 px-4 md:px-8 bg-[#09090c] outline outline-1 -outline-offset-1 outline-[#111115]">
       <div className="max-w-6xl mx-auto">
         {title ? (
           <h2 className="font-editorial text-5xl md:text-7xl font-medium mb-12 md:mb-16 tracking-wide text-[#f2ece3]">

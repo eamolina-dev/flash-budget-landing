@@ -76,7 +76,7 @@ export const DynamicImageSection = ({ src, alt }: Props) => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[90vh] md:h-screen overflow-hidden my-1"
+      className="relative w-full h-[90vh] md:h-screen overflow-hidden outline outline-1 -outline-offset-1 outline-[#111115]"
     >
       <img
         ref={imgRef}

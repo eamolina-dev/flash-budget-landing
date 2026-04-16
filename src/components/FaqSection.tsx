@@ -10,7 +10,7 @@ type Props = {
 
 export const FaqSection = ({ title = "Preguntas Frecuentes", items }: Props) => {
   return (
-    <section className="w-full py-24 md:py-32 px-6 bg-[#0d0d11] my-1">
+    <section className="w-full py-24 md:py-32 px-6 bg-[#0d0d11] outline outline-1 -outline-offset-1 outline-[#111115]">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-editorial text-5xl md:text-7xl font-medium text-center mb-16 text-[#f2ece3]">
           {title}

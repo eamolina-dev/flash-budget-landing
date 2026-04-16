@@ -211,7 +211,7 @@ Mirada documental cuando todo sucede.`}
 
         <section
           id="presupuesto"
-          className="w-full py-24 md:py-32 px-6 bg-[#111115] my-1"
+          className="w-full py-24 md:py-32 px-6 bg-[#111115] outline outline-1 -outline-offset-1 outline-[#111115]"
         >
           <div className="max-w-6xl mx-auto">
             <div className="max-w-2xl mb-14 md:mb-20">

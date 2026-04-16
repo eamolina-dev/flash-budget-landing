@@ -11,7 +11,7 @@ type Props = {
 
 export const ContactSection = ({ title, subtitle, links }: Props) => {
   return (
-    <section id="contacto" className="w-full py-24 md:py-32 px-6 bg-[#070709] text-[#f2ece3] my-1">
+    <section id="contacto" className="w-full py-24 md:py-32 px-6 bg-[#070709] text-[#f2ece3] outline outline-1 -outline-offset-1 outline-[#111115]">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="font-editorial text-5xl md:text-7xl font-medium mb-6">{title}</h2>
 

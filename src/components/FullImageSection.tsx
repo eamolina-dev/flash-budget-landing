@@ -50,7 +50,7 @@ export const FullImageSection = ({ src, alt = "" }: Props) => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[72vh] md:h-[85vh] lg:h-screen overflow-hidden my-1"
+      className="relative w-full h-[72vh] md:h-[85vh] lg:h-screen overflow-hidden outline outline-1 -outline-offset-1 outline-[#111115]"
     >
       <img
         ref={imageRef}

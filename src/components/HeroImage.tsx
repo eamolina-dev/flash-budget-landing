@@ -47,7 +47,7 @@ export const Hero = ({
   }, []);
 
   return (
-    <section className="relative w-full h-[80vh] md:h-[94vh] lg:h-screen overflow-hidden my-1 bg-[#08080b]">
+    <section className="relative w-full h-[80vh] md:h-[94vh] lg:h-screen overflow-hidden outline outline-1 -outline-offset-1 outline-[#111115] bg-[#08080b]">
       <img
         ref={imageRef}
         src={src}
