@@ -3,18 +3,19 @@ import { useEffect, useRef } from "react";
 type Props = {
   src: string;
   alt?: string;
+  asBackground?: boolean;
 };
 
-export const FullImageSection = ({ src, alt = "" }: Props) => {
+export const FullImageSection = ({ src, alt = "", asBackground = false }: Props) => {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const imageRef = useRef<HTMLImageElement | null>(null);
+  const mediaRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     let rafId = 0;
 
     const updateTransform = () => {
       rafId = 0;
-      if (!imageRef.current || !sectionRef.current) return;
+      if (!mediaRef.current || !sectionRef.current) return;
 
       const rect = sectionRef.current.getBoundingClientRect();
       const progress = Math.max(
@@ -26,7 +27,7 @@ export const FullImageSection = ({ src, alt = "" }: Props) => {
       );
 
       const translate = (progress - 0.5) * 30;
-      imageRef.current.style.transform = `translate3d(0, ${translate}px, 0) scale(1.08)`;
+      mediaRef.current.style.transform = `translate3d(0, ${translate}px, 0) scale(1.08)`;
     };
 
     const onScroll = () => {
@@ -52,12 +53,26 @@ export const FullImageSection = ({ src, alt = "" }: Props) => {
       ref={sectionRef}
       className="relative w-full h-[72vh] md:h-[85vh] lg:h-screen overflow-hidden my-1"
     >
-      <img
-        ref={imageRef}
-        src={src}
-        alt={alt}
-        className="absolute inset-0 w-full h-full object-cover will-change-transform"
-      />
+      {asBackground ? (
+        <div
+          ref={(node) => {
+            mediaRef.current = node;
+          }}
+          role="img"
+          aria-label={alt}
+          className="absolute inset-0 bg-cover bg-center will-change-transform"
+          style={{ backgroundImage: `url(${src})` }}
+        />
+      ) : (
+        <img
+          ref={(node) => {
+            mediaRef.current = node;
+          }}
+          src={src}
+          alt={alt}
+          className="absolute inset-0 w-full h-full object-cover will-change-transform"
+        />
+      )}
       <div className="absolute inset-0 bg-black/15" />
     </section>
   );

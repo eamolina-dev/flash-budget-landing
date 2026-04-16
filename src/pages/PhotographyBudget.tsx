@@ -172,6 +172,7 @@ Retratos, baile y abrazos sin cortar el ritmo.`}
         <FullImageSection
           src="/images/party_dancing/--905.jpg"
           alt="Momento emocional fuerte entre familia"
+          asBackground
         />
 
         <DynamicImageSection
