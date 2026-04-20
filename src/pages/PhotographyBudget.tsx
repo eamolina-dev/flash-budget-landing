@@ -47,35 +47,35 @@ const packages: Package[] = [
 ];
 
 const previaGallery = [
-  "/images/portrait_of_a_person/--106.jpg",
-  "/images/group_of_people/--106.jpg",
-  "/images/portrait_of_a_person/--75.jpg",
-  "/images/makeup_preparation/--22.jpg",
-  "/images/group_of_people/--112.jpg",
-  "/images/makeup_preparation/--43.jpg",
-  "/images/portrait_of_a_person/--81.jpg",
-  "/images/group_of_people/--41.jpg",
-  "/images/portrait_of_a_person/--89.jpg",
-  "/images/portrait_of_a_person/--13.jpg",
-  "/images/party_dancing/--138.jpg",
-  "/images/makeup_preparation/--39.jpg",
+  "/selected/portrait_of_a_person/--106.jpg",
+  "/selected/group_of_people/--106.jpg",
+  "/selected/portrait_of_a_person/--75.jpg",
+  "/selected/makeup_preparation/--22.jpg",
+  "/selected/group_of_people/--112.jpg",
+  "/selected/makeup_preparation/--43.jpg",
+  "/selected/portrait_of_a_person/--81.jpg",
+  "/selected/group_of_people/--41.jpg",
+  "/selected/portrait_of_a_person/--89.jpg",
+  "/selected/portrait_of_a_person/--13.jpg",
+  "/selected/party_dancing/--138.jpg",
+  "/selected/makeup_preparation/--39.jpg",
 ];
 
 const fiestaGallery = [
-  "/images/party_dancing/--231.jpg",
-  "/images/party_dancing/--654.jpg",
-  "/images/party_dancing/--167.jpg",
-  "/images/makeup_preparation/--523.jpg",
-  "/images/party_dancing/--929.jpg",
-  "/images/party_dancing/--954.jpg",
+  "/selected/party_dancing/--231.jpg",
+  "/selected/party_dancing/--654.jpg",
+  "/selected/party_dancing/--167.jpg",
+  "/selected/makeup_preparation/--523.jpg",
+  "/selected/party_dancing/--929.jpg",
+  "/selected/party_dancing/--954.jpg",
   //
-  "/images/party_dancing/--605.jpg",
-  "/images/party_dancing/--537.jpg",
-  "/images/party_dancing/--464.jpg",
+  "/selected/party_dancing/--605.jpg",
+  "/selected/party_dancing/--537.jpg",
+  "/selected/party_dancing/--464.jpg",
 
-  "/images/party_dancing/--218.jpg",
-  "/images/party_dancing/--377.jpg",
-  "/images/group_of_people/--913.jpg",
+  "/selected/party_dancing/--218.jpg",
+  "/selected/party_dancing/--377.jpg",
+  "/selected/group_of_people/--913.jpg",
 ];
 
 export const PhotographyBudget = () => {
@@ -84,12 +84,12 @@ export const PhotographyBudget = () => {
       <div
         className="fixed inset-0 w-full h-full bg-cover bg-center -z-50 transition-all duration-700 ease-in-out"
         style={{
-          backgroundImage: "url(/images/portrait_of_a_person/--76.jpg)",
+          backgroundImage: "url(/selected/portrait_of_a_person/--76.jpg)",
         }}
       />
       <div className="bg-[#111115] relative z-10 outline outline-1 outline-[#111115] -mt-[1px] pt-[1px]">
         <Hero
-          src="/images/portrait_of_a_person/--75.jpg"
+          src="/selected/portrait_of_a_person/--75.jpg"
           title="Tus 15, para siempre"
           subtitle="Lo único que queda... es la fotografía."
           btnText="VER PROPUESTA"
@@ -98,7 +98,7 @@ export const PhotographyBudget = () => {
 
         <SplitSection
           id="servicios"
-          image="/images/party_dancing/--12.jpg"
+          image="/selected/party_dancing/--12.jpg"
           imageAlt="Preparación y maquillaje de quinceañera"
           eyebrow="Acto 1 · La previa"
           title="Todo empieza mucho antes de la fiesta"
@@ -108,17 +108,17 @@ La historia arranca en silencio.`}
         />
 
         {/* <FullImageSection
-          src="/images/makeup_preparation/--19.jpg"
+          src="/selected/makeup_preparation/--19.jpg"
           alt="Detalle de maquillaje en preparación"
         /> */}
         <DynamicImageSection
-          src="/images/makeup_preparation/--19.jpg"
+          src="/selected/makeup_preparation/--19.jpg"
           alt="Detalle de maquillaje en preparación"
         />
 
         <SplitSection
           reverse
-          image="/images/portrait_of_a_person/--178.jpg"
+          image="/selected/portrait_of_a_person/--178.jpg"
           imageAlt="Familia acompañando durante la previa"
           eyebrow="Familia"
           title="Las miradas que más importan"
@@ -140,7 +140,7 @@ Se retratan momentos y se reflejan emociones.`}
 
       <div className="bg-[#111115] relative z-10 outline outline-1 outline-[#111115] -mt-[1px] pt-[1px]">
         <SplitSection
-          image="/images/portrait_of_a_person/--106.jpg"
+          image="/selected/portrait_of_a_person/--106.jpg"
           imageAlt="Entrada de quinceañera al evento"
           eyebrow="Acto 2 · La fiesta"
           title="La entrada que todos esperan"
@@ -150,7 +150,7 @@ Cada segundo importa.`}
         />
 
         <FullImageSection
-          src="/images/portrait_of_a_person/--191.jpg"
+          src="/selected/portrait_of_a_person/--191.jpg"
           alt="Entrada de impacto en la fiesta de 15"
         />
 
@@ -164,7 +164,7 @@ Cada segundo importa.`}
 
         <SplitSection
           reverse
-          image="/images/party_dancing/--363.jpg"
+          image="/selected/party_dancing/--363.jpg"
           imageAlt="Cobertura de pista y baile"
           eyebrow="Cobertura"
           title="Presencia discreta, recuerdos intensos"
@@ -174,17 +174,17 @@ Retratos, baile y abrazos sin cortar el ritmo.`}
         />
 
         {/* <FullImageSection
-          src="/images/party_dancing/--905.jpg"
+          src="/selected/party_dancing/--905.jpg"
           alt="Momento emocional fuerte entre familia"
         /> */}
 
         <DynamicImageSection
-          src="/images/party_dancing/--463.jpg"
+          src="/selected/party_dancing/--463.jpg"
           alt="Transición emocional de cierre"
         />
 
         <SplitSection
-          image="/images/party_dancing/--335.jpg"
+          image="/selected/party_dancing/--335.jpg"
           imageAlt="Abrazo emocional en la celebración"
           eyebrow="Acto 3 · Valor"
           title="No se trata solo de fotos"
@@ -194,13 +194,13 @@ Eso también es parte del servicio.`}
         />
 
         <FullImageSection
-          src="/images/people_hugging/--182.jpg"
+          src="/selected/people_hugging/--182.jpg"
           alt="Retrato final de quinceañera"
         />
 
         <SplitSection
           reverse
-          image="/images/group_of_people/--241.jpg"
+          image="/selected/group_of_people/--241.jpg"
           imageAlt="Foto grupal de cierre"
           eyebrow="Qué incluye"
           title="Una cobertura completa y simple"
